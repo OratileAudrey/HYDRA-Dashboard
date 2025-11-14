@@ -1,13 +1,11 @@
 import axios from 'axios'
 
-// HYDRA Export per day endpoint
-const HYDRA_API_URL = '/hydra-api/Sensor/exportAggregatedNumbers?binBy=day'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+const HYDRA_API_URL = `${API_BASE_URL}/Sensor/exportAggregatedNumbers?binBy=day`
 
-// Default device and sensor IDs from the case study
 const DEVICE_ID = '38394d4c-cb8e-ef11-a81c-6045bd88aa3b'
 const SENSOR_ID = '470b1334-0000-0001-0000-000000000000'
 
-// Define the shape of a response item
 interface EnergyRecord {
   sensorId: string
   year: number
@@ -19,7 +17,6 @@ interface EnergyRecord {
   max: number
 }
 
-// Define the formatted version we'll use in the frontend
 export interface EnergyData {
   date: string
   kWh: number
@@ -51,7 +48,7 @@ export async function getEnergyData(
 
     const formatted: EnergyData[] = response.data.map((item) => ({
       date: `${item.year}-${String(item.month).padStart(2, '0')}-${String(item.day).padStart(2, '0')}`,
-      kWh: (item.max - item.min) / 1000, // Convert to kWh (assuming values are in Wh)
+      kWh: (item.max - item.min) / 1000,
       raw: item,
     }))
 

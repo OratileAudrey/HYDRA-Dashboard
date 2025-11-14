@@ -13,7 +13,7 @@ Advanced Analytics: 7-day moving averages, anomaly detection, and forecasting
 Weather Correlation: Integrate external weather data to explain usage patterns
 AI-Powered Insights: Context-aware explanations for energy spikes and trends
 
-Demo: https://oratileaudrey.github.io/HYDRA-Dashboard/
+Demo: https://oratileaudrey.github.io/hydra-dashboard/
 
 # ✨ Features
 
@@ -63,7 +63,7 @@ Version Control: Git
 
 ## Project Structure
 ```
-HYDRA-Dashboard/
+hydra/
 ├── .vscode/                  # VSCode configuration
 ├── dist/                     # Build output directory
 ├── node_modules/             # Dependencies
@@ -109,7 +109,7 @@ HYDRA-Dashboard/
 # ⚙️ Setup & Run
 
 1️⃣ Clone the Repository
-git clone https://github.com/OratileAudrey/HYDRA-Dashboard
+git clone https://github.com/OratileAudrey/hydra-dashboard
 cd hydra
 
 2️⃣ Install Dependencies
