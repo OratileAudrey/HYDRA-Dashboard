@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
-const HYDRA_API_URL = `${API_BASE_URL}/Sensor/exportAggregatedNumbers?binBy=day`
+const CORS_PROXY = import.meta.env.PROD ? 'https://corsproxy.io/?' : ''
+const HYDRA_API_URL = `${CORS_PROXY}${API_BASE_URL}/Sensor/exportAggregatedNumbers?binBy=day`
+
 
 const DEVICE_ID = '38394d4c-cb8e-ef11-a81c-6045bd88aa3b'
 const SENSOR_ID = '470b1334-0000-0001-0000-000000000000'
